@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+@import url('https://fonts.googleapis.com/css?family=Candal');
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+a {
+    font-style: inherit;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.loaded {
+    filter: none;
+}
+
+.unloaded {
+    filter: blur(2px);
+}
+
+#loader {
+    z-index: 2;
+}
+
+#loader-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 200px;
+    padding: 0%;
+    margin: 0%;
+}
+
+#main-loader {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    padding: 0%;
+    margin: 0%;
+    border-top: 0.5vh solid black;
+    border-bottom: 0.5vh solid black;
+    border-radius: 100px;
+    box-shadow: 0rem 0rem 10rem 0rem;
+    animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Candal', monospace;
+    font-size: 100%;
+}
+
+#main-container {
+    position: relative;
+}
+
+.pages {
+    height: 100vh;
+    width: 100%;
+}
+
+.page-overlay {
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    background-color: white;
+}
+
+#the-event {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: 1fr 3fr 3fr 3fr 1fr;
+    grid-template-areas: "the1 the2 the3" "the4 the5 the6" "the7 the8 the9" "the10 the11 the12" "the13 the14 th15";
+    background-color: #3AAFA9;
+}
+
+#intro-text {
+    grid-area: the5;
+    font-family: 'Candal', monospace;
+    font-size: 4em;
+    text-align: center;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #3AAFA9;
+    color: white;
+}
+
+#sub-intro-text {
+    grid-area: the11;
+    font-family: 'Candal', monospace;
+    font-size: 0.5em;
+    text-align: center;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    color: #17242A;
+}
+
+#the-event img {
+    grid-area: the8;
+    height: 20vh;
+}
+
+#registration-form {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-areas: "left-1 form right-1";
+    justify-items: center;
+}
+
+iframe {
+    grid-area: form;
+    padding-top: 5vh;
+}
+
+nav {
+    font-family: 'Candal', monospace;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "one two three" "four five six" "seven eight nine";
+    justify-items: center;
+    align-items: center;
+    z-index: -1;
+}
+
+.nav {
+    width: 90%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr 1fr;
+    position: relative;
+    justify-items: center;
+    align-items: center;
+}
+
+.nav img {
+    height: 80%;
+    width: auto;
+    transition: 0.5s all;
+}
+
+#nav1 img {
+    height: 90%;
+}
+
+.navimg:hover {
+    filter: drop-shadow(8px 8px 10px grey);
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.navimg:active {
+    transform: scale(1);
+}
+
+.nav p {
+    height: 100%;
+    width: 100%;
+    font-size: 1.2em;
+    text-align: center;
+    align-self: end;
+}
+
+#nav1 {
+    grid-area: five;
+}
+
+#nav2 {
+    grid-area: one;
+}
+
+#nav3 {
+    grid-area: three;
+}
+
+#nav4 {
+    grid-area: seven;
+}
+
+#nav5 {
+    grid-area: nine;
+}
+
+#menu-icon {
+    z-index: 1;
+}
+
+#down,
+#cross {
+    height: 5vh;
+    width: auto;
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    padding: 2px;
+}
+
+#down:hover,
+#cross:hover {
+    cursor: pointer;
+}
+
+#down {
+    filter: drop-shadow(0px 10px 10px black);
+    animation: bounce 1s infinite ease;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0vh);
+    }
+    50% {
+        transform: translateY(2vh);
+    }
+    to {
+        transform: translateY(0vh);
+    }
+}
+
+#cross {
+    filter: drop-shadow(0px 10px 10px black);
+    transition: 0.2s ease all;
+    padding-top: 1%;
+}
+
+#cross:hover {
+    transform: scale(1.1);
+}
+
+#cross:active {
+    transform: scale(1);
+}
+
+#body-container {
+    height: 100vh;
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    #loader-container {
+        height: 100px;
+        width: 100px;
+    }
+    #main-loader {
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
+    }
+    .loading {
+        font-size: 15px;
+    }
+    nav {
+        height: 95vh;
+    }
+    .nav {
+        height: 50%;
+        width: 50%;
+    }
+    .nav img {
+        width: 100%;
+        height: auto;
+    }
+    .nav p {
+        position: relative;
+    }
+}
+
+.no-display {
+    display: none !important;
+}
+
+.grid-display {
+    display: grid;
+}
