@@ -3,6 +3,7 @@
 * {
     margin: 0%;
     padding: 0%;
+    user-select: none;
 }
 
 a {
@@ -19,52 +20,6 @@ a:hover {
 
 .unloaded {
     filter: blur(2px);
-}
-
-#loader {
-    z-index: 2;
-}
-
-#loader-container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 200px;
-    width: 200px;
-    padding: 0%;
-    margin: 0%;
-}
-
-#main-loader {
-    position: relative;
-    height: 200px;
-    width: 200px;
-    padding: 0%;
-    margin: 0%;
-    border-top: 0.5vh solid black;
-    border-bottom: 0.5vh solid black;
-    border-radius: 100px;
-    box-shadow: 0rem 0rem 10rem 0rem;
-    animation: spin 1s ease infinite;
-}
-
-@keyframes spin {
-    from {
-        transform: rotateZ(0deg);
-    }
-    to {
-        transform: rotateZ(360deg);
-    }
-}
-
-.loading {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Candal', monospace;
-    font-size: 100%;
 }
 
 #main-container {
@@ -99,6 +54,7 @@ a:hover {
     -webkit-text-stroke-width: 5px;
     -webkit-text-stroke-color: #3AAFA9;
     color: white;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
 }
 
 #sub-intro-text {
@@ -126,6 +82,52 @@ a:hover {
 iframe {
     grid-area: form;
     padding-top: 5vh;
+}
+
+footer {
+    width: 30%;
+    position: absolute;
+    right: 2%;
+    bottom: 2%;
+    background-color: rgba(0, 0, 0, 0);
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-areas: "copyright facebook instagram";
+    justify-items: end;
+    align-items: center;
+}
+
+footer img {
+    height: 7.5vh;
+    transition: 0.5s ease all;
+}
+
+footer img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+footer img:active {
+    transform: scale(1);
+}
+
+footer span {
+    color: white;
+    font-size: 1em;
+    text-align: end;
+    font-family: 'Candal', monospace;
+}
+
+#foot1 {
+    grid-area: copyright;
+}
+
+#foot2 {
+    grid-area: facebook;
+}
+
+#foot3 {
+    grid-area: instagram;
 }
 
 nav {
@@ -210,8 +212,8 @@ nav {
     height: 5vh;
     width: auto;
     position: absolute;
+    right: 1%;
     top: 1%;
-    left: 1%;
     padding: 2px;
 }
 
