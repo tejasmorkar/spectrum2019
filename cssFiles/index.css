@@ -26,11 +26,6 @@ a:hover {
     position: relative;
 }
 
-.pages {
-    height: 100vh;
-    width: 100%;
-}
-
 .page-overlay {
     position: absolute;
     height: 100vh;
@@ -39,6 +34,8 @@ a:hover {
 }
 
 #the-event {
+    height: 100vh;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 8fr 1fr;
     grid-template-rows: 1fr 3fr 3fr 3fr 1fr;
@@ -48,7 +45,7 @@ a:hover {
 
 #intro-text {
     grid-area: the5;
-    font-family: 'Candal', monospace;
+    font-family: 'Candal', cursive;
     font-size: 4em;
     text-align: center;
     -webkit-text-stroke-width: 5px;
@@ -59,7 +56,7 @@ a:hover {
 
 #sub-intro-text {
     grid-area: the11;
-    font-family: 'Candal', monospace;
+    font-family: 'Candal', cursive;
     font-size: 0.5em;
     text-align: center;
     -webkit-text-stroke-width: 2px;
@@ -67,26 +64,122 @@ a:hover {
     color: #17242A;
 }
 
-#the-event img {
+#down {
+    height: 5vh;
+    width: auto;
     grid-area: the8;
-    height: 20vh;
+    justify-self: center;
 }
 
-#registration-form {
+#down:hover {
+    cursor: pointer;
+}
+
+#down {
+    filter: drop-shadow(0px 10px 10px black);
+    animation: bounce 1s infinite ease;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0vh);
+    }
+    50% {
+        transform: translateY(2vh);
+    }
+    to {
+        transform: translateY(0vh);
+    }
+}
+
+#memories{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: "mem1 mem2";
+}
+
+#mem1{
+    grid-area: mem1;
+}
+
+#mem2{
+    grid-area: mem2;
+    background-color: #3AAFA9;
+}
+
+#contact-us{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 65% 25%;
+    grid-template-areas: ". con1 con2";
+    justify-items: center;
+    align-items: center;
+}
+
+#contact-info{
+    grid-area: con2;
+    background-color: #3AAFA9;
+    height: 100vh;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
-    grid-template-areas: "left-1 form right-1";
-    justify-items: center;
+    grid-template-rows: 10% 75% *;
+    grid-template-areas: ". coninfo1 ." ". coninfo2 ." ". coninfo3 .";
 }
 
-iframe {
-    grid-area: form;
-    padding-top: 5vh;
+#coninfo1{
+    grid-area: coninfo2;
+    color: white;
+    justify-self: start;
+    font-family: 'Candal', cursive;
+    font-size: 1.5em;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+#coninfo2{
+    color: white;
+    justify-self: start;
+    font-family: 'Times New Roman', cursive;
+    font-size: 0.8em;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+#mapid {
+    grid-area: con1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-rows: 10% 75% *;
+    grid-template-areas: "mapid1" "mapid2" ".";
+}
+
+#mapid span{
+    grid-area: mapid1;
+    justify-self: center;
+    align-self: end;
+    font-family: 'Candal', cursive;
+    font-size: 1.5em;
+    color: #17242A;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+#mapid iframe{
+    grid-area: mapid2;
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    width: 90%;
+    filter: drop-shadow(8px 8px 10px rgba(0,0,0,0.5));
+    transition: 0.5s ease all;
 }
 
 footer {
     width: 30%;
-    position: absolute;
+    position: fixed;
     right: 2%;
     bottom: 2%;
     background-color: rgba(0, 0, 0, 0);
@@ -95,6 +188,10 @@ footer {
     grid-template-areas: "copyright facebook instagram";
     justify-items: end;
     align-items: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #3AAFA9;
+    color: white;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
 }
 
 footer img {
@@ -115,7 +212,7 @@ footer span {
     color: white;
     font-size: 1em;
     text-align: end;
-    font-family: 'Candal', monospace;
+    font-family: 'Candal', cursive;
 }
 
 #foot1 {
@@ -131,17 +228,19 @@ footer span {
 }
 
 nav {
-    font-family: 'Candal', monospace;
-    height: 100vh;
-    width: 100%;
-    position: absolute;
+    font-family: 'Candal', cursive;
+    height: auto;
+    width: 10%;
+    position: fixed;
+    left: 2vh;
+    top: 50%;
+    transform: translate(-0%, -50%);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas: "one two three" "four five six" "seven eight nine";
+    grid-template-rows: 15vh 15vh 15vh 15vh;
+    grid-template-areas: "one" "two" "three" "four";
     justify-items: center;
     align-items: center;
-    z-index: -1;
+    z-index: 3;
 }
 
 .nav {
@@ -166,7 +265,7 @@ nav {
 }
 
 .navimg:hover {
-    filter: drop-shadow(8px 8px 10px grey);
+    filter: drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.5));
     cursor: pointer;
     transform: scale(1.2);
 }
@@ -178,17 +277,21 @@ nav {
 .nav p {
     height: 100%;
     width: 100%;
-    font-size: 1.2em;
+    font-size: 1em;
     text-align: center;
-    align-self: end;
+    align-self: center;
+}
+
+.nav p:hover {
+    cursor: pointer;
 }
 
 #nav1 {
-    grid-area: five;
+    grid-area: one;
 }
 
 #nav2 {
-    grid-area: one;
+    grid-area: two;
 }
 
 #nav3 {
@@ -196,61 +299,11 @@ nav {
 }
 
 #nav4 {
-    grid-area: seven;
-}
-
-#nav5 {
-    grid-area: nine;
+    grid-area: four;
 }
 
 #menu-icon {
-    z-index: 1;
-}
-
-#down,
-#cross {
-    height: 5vh;
-    width: auto;
-    position: absolute;
-    right: 1%;
-    top: 1%;
-    padding: 2px;
-}
-
-#down:hover,
-#cross:hover {
-    cursor: pointer;
-}
-
-#down {
-    filter: drop-shadow(0px 10px 10px black);
-    animation: bounce 1s infinite ease;
-}
-
-@keyframes bounce {
-    from {
-        transform: translateY(0vh);
-    }
-    50% {
-        transform: translateY(2vh);
-    }
-    to {
-        transform: translateY(0vh);
-    }
-}
-
-#cross {
-    filter: drop-shadow(0px 10px 10px black);
-    transition: 0.2s ease all;
-    padding-top: 1%;
-}
-
-#cross:hover {
-    transform: scale(1.1);
-}
-
-#cross:active {
-    transform: scale(1);
+    grid-area: the8;
 }
 
 #body-container {
@@ -258,34 +311,7 @@ nav {
     width: 100%;
 }
 
-@media only screen and (max-width: 600px) {
-    #loader-container {
-        height: 100px;
-        width: 100px;
-    }
-    #main-loader {
-        height: 100px;
-        width: 100px;
-        border-radius: 50px;
-    }
-    .loading {
-        font-size: 15px;
-    }
-    nav {
-        height: 95vh;
-    }
-    .nav {
-        height: 50%;
-        width: 50%;
-    }
-    .nav img {
-        width: 100%;
-        height: auto;
-    }
-    .nav p {
-        position: relative;
-    }
-}
+@media only screen and (max-width: 600px) {}
 
 .no-display {
     display: none !important;
