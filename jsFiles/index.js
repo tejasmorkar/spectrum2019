@@ -62,6 +62,36 @@ function gmapLink() {
     }
 }
 
+$("#intro-text").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#events").offset().top},
+        'slow');
+});
+
+$("#nav2").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#registration").offset().top},
+        'slow');
+});
+
+$("#nav1").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#events").offset().top},
+        'slow');
+});
+
+$("#nav3").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#memories").offset().top},
+        'slow');
+});
+
+$("#nav4").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#contact-us").offset().top},
+        'slow');
+});
+
 // var mymap = L.map('mapid').setView([18.653000, 73.762356], 16);
 
 // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {

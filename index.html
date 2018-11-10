@@ -7,7 +7,7 @@
     <title>Spectrum 2019</title>
     <link rel="stylesheet" type="text/css" media="screen" href="cssFiles/index.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="shortcut icon" href="images/logo1.png" type="image/png">
+    <link rel="shortcut icon" href="images/spectrum-logo-transparent.png" type="image/png">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
 </head>
 
@@ -23,6 +23,33 @@
                     
                 </span>
             </div>
+
+            <div class="pages" id="events">
+                <div id="eve1">
+                    <span>
+                        <p>The Even Starts In:</p>
+                        <p id="demo"></p>
+                    </span>
+                </div>
+                <div id="eve2">
+
+                </div>
+                <div id="eve3">
+                
+                </div>
+                <div id="eve4">
+                    
+                </div>
+            </div>
+
+            <div class="pages" id="registration">
+                    <div id="reg1">
+    
+                    </div>
+                    <div id="reg2">
+    
+                    </div>
+                </div>
 
             <div class="pages" id="memories">
                 <div id="mem1">
@@ -56,16 +83,16 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3780.2965834731876!2d73.7628284!3d18.6506825!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e76c8fa205%3A0x1b210131915734fd!2sPCCOE+-+Pimpri+Chinchwad+College+Of+Engineering!5e0!3m2!1sen!2sin!4v1541579386757" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
             </div>
+            <footer id="footer">
+                <span id="foot1">
+                    &copy; 2019 PCET's PCCOE, Nigdi
+                </span>
+                <img id="foot2" src="images/facebook.png" alt="">
+                <img id="foot3" src="images/instagram.png" alt="">
+            </footer>
         </div>
 
-        <footer id="footer">
-            <span id="foot1">
-                &copy; 2019 PCET's PCCOE, Nigdi
-            </span>
-            <img id="foot2" src="images/facebook.png" alt="">
-            <img id="foot3" src="images/instagram.png" alt="">
-        </footer>
-
+        
         <nav id="navigation">
             <span class="nav" id="nav1">
                 <img class="navimg" src="images/spectrum-logo-transparent.png" alt="">
@@ -73,36 +100,66 @@
                     Events
                 </p>
             </span>
-
-            <span class="nav" id="nav2" onclick="formEvent()">
-                <img class="navimg" src="images/register.png" alt="">
-                <p>
-                    Register
-                </p>
+            
+            <span class="nav" id="nav2">
+                    <img class="navimg" src="images/register.png" alt="">
+                    <p>
+                        Register
+                    </p>
             </span>
-
+            
             <span class="nav" id="nav3">
                 <img class="navimg"src="images/memories.png" alt="">
                 <p>
                     Memories
                 </p>
             </span>
-
+            
             <span class="nav" id="nav4">
-                <img class="navimg" src="images/locate-us.png" alt="">
+                <img class="navimg" src="images/contact-us.png" alt="">
                 <p>
-                    Locate Us
+                    Contact Us
                 </p>
             </span>
         </nav>
-
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
     <script src="jsFiles/aos.js"></script>
     <script src="jsFiles/typeIt.js"></script>
     <script src="jsFiles/particles.js"></script>
     <script src="jsFiles/index.js"></script>
+    <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Mar 27, 2019 15:37:25").getTime();
+            
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+            
+                // Get todays date and time
+                var now = new Date().getTime();
+                
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+                
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                // Output the result in an element with id="demo"
+                document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+                
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("demo").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+            </script>
 
 </body>
 

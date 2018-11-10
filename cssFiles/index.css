@@ -92,6 +92,66 @@ a:hover {
     }
 }
 
+#events{
+    height: 200vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "eve1 eve1 eve2" "eve3 eve4 eve4";
+}  
+
+#eve1{
+    grid-area: eve1;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 1fr 5fr 1fr;
+    color: #17242A;
+    font-family: 'Candal', cursive;
+    font-size: 2em;
+    grid-template-areas: "ev1 ev2 ev3" "ev4 ev5 ev6" "ev7 ev8 ev9";
+}
+
+#eve1 span{
+    grid-area: ev8;
+    text-align: center;
+    justify-self: center;
+}
+
+#eve2{
+    grid-area: eve2;
+    background-color:  #3AAFA9;
+}
+
+#eve3{
+    grid-area: eve3;
+    display: grid;
+    grid-template-areas: 20% 80%;
+    grid-template-areas: "e31 e32";
+}
+
+#eve4{
+    grid-area: eve4;
+    background-color: #3AAFA9;
+}
+
+#registration{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-areas: "reg1 reg2";
+}
+
+#reg1{
+    grid-area: reg1;
+}
+
+#reg2{
+    grid-area: reg2;
+    background-color:  #3AAFA9;
+}
+
 #memories{
     height: 100vh;
     width: 100%;
@@ -110,7 +170,7 @@ a:hover {
 }
 
 #contact-us{
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     display: grid;
     grid-template-columns: 10% 65% 25%;
@@ -126,7 +186,7 @@ a:hover {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: 10% 75% *;
+    grid-template-rows: 10% 75% auto;
     grid-template-areas: ". coninfo1 ." ". coninfo2 ." ". coninfo3 .";
 }
 
@@ -153,7 +213,7 @@ a:hover {
     height: 100%;
     position: relative;
     display: grid;
-    grid-template-rows: 10% 75% *;
+    grid-template-rows: 10% 75% auto;
     grid-template-areas: "mapid1" "mapid2" ".";
 }
 
@@ -172,26 +232,23 @@ a:hover {
     position: relative;
     justify-self: center;
     align-self: center;
-    width: 90%;
+    height: 90%;
     filter: drop-shadow(8px 8px 10px rgba(0,0,0,0.5));
     transition: 0.5s ease all;
 }
 
 footer {
-    width: 30%;
-    position: fixed;
-    right: 2%;
-    bottom: 2%;
+    width: 100%;
+    padding: 10px 0%;
     background-color: rgba(0, 0, 0, 0);
-    display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
-    grid-template-areas: "copyright facebook instagram";
-    justify-items: end;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #3AAFA9;
     color: white;
     text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    background-color: #17242A;
 }
 
 footer img {
@@ -216,15 +273,15 @@ footer span {
 }
 
 #foot1 {
-    grid-area: copyright;
+    padding: 0% 1%;
 }
 
 #foot2 {
-    grid-area: facebook;
+    padding: 0% 1%;
 }
 
 #foot3 {
-    grid-area: instagram;
+    padding: 0% 1%;
 }
 
 nav {
@@ -320,3 +377,4 @@ nav {
 .grid-display {
     display: grid;
 }
+
