@@ -52,7 +52,7 @@ function formEvent() {
 }
 
 function openGallery() {
-    const win = window.open('../gallery.html', '_blank');
+    const win = window.open('/gallery.html', '_blank');
     if (win) {
         //Browser has allowed it to be opened
         win.focus();
