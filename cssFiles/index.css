@@ -40,7 +40,7 @@ a:hover {
     grid-template-columns: 1fr 8fr 1fr;
     grid-template-rows: 1fr 3fr 3fr 3fr 1fr;
     grid-template-areas: "the1 the2 the3" "the4 the5 the6" "the7 the8 the9" "the10 the11 the12" "the13 the14 th15";
-    background-color: #3AAFA9;
+    background-color: #00a7e1;
 }
 
 #intro-text {
@@ -49,7 +49,7 @@ a:hover {
     font-size: 4em;
     text-align: center;
     -webkit-text-stroke-width: 5px;
-    -webkit-text-stroke-color: #3AAFA9;
+    -webkit-text-stroke-color: #00a7e1;
     color: white;
     text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
 }
@@ -92,7 +92,7 @@ a:hover {
     }
 }
 
-#events{
+.events{
     height: 100vh;
     width: 100%;
     display: grid;
@@ -100,26 +100,34 @@ a:hover {
     grid-template-areas: "eve1 eve1 eve2";
 }  
 
-#eve1{
+.event1{
     grid-area: eve1;
+    height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-columns: [startcol-eve] 1fr 5fr 1fr [endcol-eve];
+    grid-template-rows: [startrow-eve] 1fr 5fr 1fr [endrow-eve];
     color: #17242A;
+    background-color: rgba(0, 0, 0, 0);
     font-family: 'Candal', cursive;
     font-size: 2em;
     grid-template-areas: "ev1 ev2 ev3" "ev4 ev5 ev6" "ev7 ev8 ev9";
 }
 
-#eve1 span{
-    grid-area: ev8;
+.event1 span{
+    grid-area: ev5;
     text-align: center;
     justify-self: center;
+    align-self: center;
+}
+
+.event1 .particles-js-canvas-el{
+    grid-column: startcol-eve / endcol-eve;
+    grid-row: startrow-eve / endrow-eve;
 }
 
 #eve2{
     grid-area: eve2;
-    background-color:  #3AAFA9;
+    background-color:  #00a7e1;
 }
 
 #registration{
@@ -136,10 +144,10 @@ a:hover {
 
 #reg2{
     grid-area: reg2;
-    background-color:  #3AAFA9;
+    background-color:  #00a7e1;
 }
 
-#memories{
+/* #memories{
     height: 100vh;
     width: 100%;
     display: grid;
@@ -153,22 +161,24 @@ a:hover {
 
 #mem2{
     grid-area: mem2;
-    background-color: #3AAFA9;
-}
+    background-color: #00a7e1;
+} */
 
-#contact-us{
+.contact-us{
     height: 90vh;
     width: 100%;
     display: grid;
-    grid-template-columns: 10% 65% 25%;
+    grid-template-columns: [startcol-con] 10% 65% [midcol-con] 25% [endcol-con];
+    grid-template-rows: [startrow-con] 90% 10% [endrow-con];
     grid-template-areas: ". con1 con2";
     justify-items: center;
     align-items: center;
 }
 
+
 #contact-info{
     grid-area: con2;
-    background-color: #3AAFA9;
+    background-color: #00a7e1;
     height: 100vh;
     width: 100%;
     display: grid;
@@ -194,7 +204,7 @@ a:hover {
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
 }
 
-#mapid {
+.mapid {
     grid-area: con1;
     width: 100%;
     height: 100%;
@@ -204,7 +214,7 @@ a:hover {
     grid-template-areas: "mapid1" "mapid2" ".";
 }
 
-#mapid span{
+.mapid span{
     grid-area: mapid1;
     justify-self: center;
     align-self: end;
@@ -214,7 +224,7 @@ a:hover {
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
 }
 
-#mapid iframe{
+.mapid iframe{
     grid-area: mapid2;
     position: relative;
     justify-self: center;
@@ -222,6 +232,11 @@ a:hover {
     height: 90%;
     filter: drop-shadow(8px 8px 10px rgba(0,0,0,0.5));
     transition: 0.5s ease all;
+}
+
+.contact-us .particles-js-canvas-el{
+    grid-column: startcol-con / midcol-con;
+    grid-row: startrow-con / endrow-con;
 }
 
 footer {
@@ -232,7 +247,7 @@ footer {
     align-items: center;
     justify-content: center;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #3AAFA9;
+    -webkit-text-stroke-color: #00a7e1;
     color: white;
     text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
     background-color: #17242A;
