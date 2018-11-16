@@ -51,6 +51,17 @@ function formEvent() {
     }
 }
 
+function openGallery() {
+    const win = window.open('../gallery.html', '_blank');
+    if (win) {
+        //Browser has allowed it to be opened
+        win.focus();
+    } else {
+        //Browser has blocked it
+        alert('Please allow popups for this website');
+    }
+}
+
 function gmapLink() {
     const win = window.open('https://goo.gl/forms/kpcTU4AUaoKSZoDm2', '_blank');
     if (win) {
@@ -77,12 +88,6 @@ $("#nav2").click(function() {
 $("#nav1").click(function() {
     $('html,body').animate({
         scrollTop: $("#events").offset().top},
-        'slow');
-});
-
-$("#nav3").click(function() {
-    $('html,body').animate({
-        scrollTop: $("#memories").offset().top},
         'slow');
 });
 
