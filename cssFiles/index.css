@@ -371,7 +371,9 @@ nav {
 }
 
 @media only screen and (max-width: 600px) {
-*{display: none;}
+.not-for-mob{
+    display: block;
+    }
 }
 
 .no-display {
@@ -382,3 +384,6 @@ nav {
     display: grid;
 }
 
+.not-for-mob{
+    display: none;    
+}
